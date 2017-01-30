@@ -3,10 +3,6 @@ node {
     stage 'Checkout'
     checkout scm
 
-
-step([$class: 'GitHubSetCommitStatusBuilder'])
-
-
     stage ('Clean'){
     withMaven(mavenLocalRepo: '.repository', mavenSettingsFilePath: "${env.MVN_SETTINGS_PATH}") {
 
@@ -48,11 +44,7 @@ step([$class: 'TasksPublisher', canComputeNew: false, defaultEncoding: '', exclu
 
 	stage('Reporting'){
 
-
-step([$class: 'GitHubCommitStatusSetter'])
 step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: '', sendToIndividuals: true])
-
-
 
 }
 }
