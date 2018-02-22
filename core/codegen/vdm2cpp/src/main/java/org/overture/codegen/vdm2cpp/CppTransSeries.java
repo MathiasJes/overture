@@ -1,4 +1,4 @@
-package org.overture.codegen.vdm2java;
+package org.overture.codegen.vdm2cpp;
 
 import java.util.LinkedList;
 import java.util.List;

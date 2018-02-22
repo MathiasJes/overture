@@ -1,0 +1,379 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+    
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Main<ast>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.overture.ast.preview.Main",
+            "projectName": "ast",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Base64<ast>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.overture.util.Base64",
+            "projectName": "ast",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TraceRunnerMain<ctruntime>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.overture.ct.ctruntime.TraceRunnerMain",
+            "projectName": "ctruntime",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-VDMJ<interpreter>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.overture.interpreter.VDMJ",
+            "projectName": "interpreter",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DBGPReader<interpreter>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.overture.interpreter.debug.DBGPReader",
+            "projectName": "interpreter",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DBGPReaderV2<interpreter>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.overture.interpreter.debug.DBGPReaderV2",
+            "projectName": "interpreter",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PermuteArray<interpreter>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.overture.interpreter.traces.PermuteArray",
+            "projectName": "interpreter",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-IsaPogCLI<isapog>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.overture.isapog.IsaPogCLI",
+            "projectName": "isapog",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JavaCodeGenMain<javagen>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.overture.codegen.vdm2java.JavaCodeGenMain",
+            "projectName": "javagen",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Main<org.overture.ide.core>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.overture.ast.preview.Main",
+            "projectName": "org.overture.ide.core",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Base64<org.overture.ide.core>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.overture.util.Base64",
+            "projectName": "org.overture.ide.core",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PackageUtils<org.overture.ide.debug>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.overture.ide.debug.utils.PackageUtils",
+            "projectName": "org.overture.ide.debug",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-XMLParser<org.overture.ide.debug>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.overture.ide.debug.utils.xml.XMLParser",
+            "projectName": "org.overture.ide.debug",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-VDMJ<org.overture.ide.debug>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.overture.interpreter.VDMJ",
+            "projectName": "org.overture.ide.debug",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DBGPReader<org.overture.ide.debug>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.overture.interpreter.debug.DBGPReader",
+            "projectName": "org.overture.ide.debug",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DBGPReaderV2<org.overture.ide.debug>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.overture.interpreter.debug.DBGPReaderV2",
+            "projectName": "org.overture.ide.debug",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PermuteArray<org.overture.ide.debug>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.overture.interpreter.traces.PermuteArray",
+            "projectName": "org.overture.ide.debug",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-XMLParser<org.overture.ide.plugins.combinatorialtesting>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.overture.combinatorialtesting.vdmj.server.xml.XMLParser",
+            "projectName": "org.overture.ide.plugins.combinatorialtesting",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TraceRunnerMain<org.overture.ide.plugins.combinatorialtesting>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.overture.ct.ctruntime.TraceRunnerMain",
+            "projectName": "org.overture.ide.plugins.combinatorialtesting",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JavaCodeGenMain<org.overture.ide.plugins.javagen>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.overture.codegen.vdm2java.JavaCodeGenMain",
+            "projectName": "org.overture.ide.plugins.javagen",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JmlGenMain<org.overture.ide.plugins.javagen>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.overture.codegen.vdm2jml.JmlGenMain",
+            "projectName": "org.overture.ide.plugins.javagen",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Main<org.overture.ide.plugins.javagen>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.google.googlejavaformat.java.Main",
+            "projectName": "org.overture.ide.plugins.javagen",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Main<org.overture.ide.plugins.javagen>(1)",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.apache.log4j.chainsaw.Main",
+            "projectName": "org.overture.ide.plugins.javagen",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PropertyPrinter<org.overture.ide.plugins.javagen>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.apache.log4j.config.PropertyPrinter",
+            "projectName": "org.overture.ide.plugins.javagen",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-LF5Appender<org.overture.ide.plugins.javagen>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.apache.log4j.lf5.LF5Appender",
+            "projectName": "org.overture.ide.plugins.javagen",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-StartLogFactor5<org.overture.ide.plugins.javagen>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.apache.log4j.lf5.StartLogFactor5",
+            "projectName": "org.overture.ide.plugins.javagen",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JMSSink<org.overture.ide.plugins.javagen>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.apache.log4j.net.JMSSink",
+            "projectName": "org.overture.ide.plugins.javagen",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SimpleSocketServer<org.overture.ide.plugins.javagen>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.apache.log4j.net.SimpleSocketServer",
+            "projectName": "org.overture.ide.plugins.javagen",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SocketServer<org.overture.ide.plugins.javagen>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.apache.log4j.net.SocketServer",
+            "projectName": "org.overture.ide.plugins.javagen",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Roller<org.overture.ide.plugins.javagen>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.apache.log4j.varia.Roller",
+            "projectName": "org.overture.ide.plugins.javagen",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-WebMacro<org.overture.ide.plugins.javagen>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.apache.velocity.convert.WebMacro",
+            "projectName": "org.overture.ide.plugins.javagen",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CppGenMain<vdm2cpp>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.overture.codegen.vdm2cpp.CppGenMain",
+            "projectName": "vdm2cpp",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JmlGenMain<vdm2jml>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.overture.codegen.vdm2jml.JmlGenMain",
+            "projectName": "vdm2jml",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Attach)",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": 0
+        }
+    ]
+}

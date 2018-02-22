@@ -1,7 +1,8 @@
-package org.overture.codegen.vdm2java;
+package org.overture.codegen.vdm2cpp;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Collection;
 import java.util.HashSet;
 
 import org.overture.ast.analysis.AnalysisException;
@@ -10,6 +11,7 @@ import org.overture.codegen.ir.IRStatus;
 import org.overture.codegen.ir.PIR;
 import org.overture.codegen.ir.declarations.AModuleDeclIR;
 import org.overture.codegen.ir.declarations.SClassDeclIR;
+import org.overture.codegen.ir.declarations.ADefaultClassDeclIR;
 import org.overture.codegen.merging.MergeVisitor;
 import org.overture.codegen.trans.ModuleToClassTransformation;
 import org.overture.codegen.ir.analysis.DepthFirstAnalysisAdaptor;
@@ -21,6 +23,8 @@ public class CppCodeGen extends CodeGenBase {
 	public static final String CPP_TEMPLATES_ROOT_FOLDER = "CppTemplates";
 	private CppFormat cppFormat;
 	private CppTransSeries transSeries;
+
+	private List<String> headers = new LinkedList<>();
 	
 	public CppCodeGen() {
 		
@@ -72,11 +76,11 @@ public class CppCodeGen extends CodeGenBase {
 		}
 		
 		List<IRStatus<SClassDeclIR>> classStatuses = IRStatus.extract(modulesAsNodes, SClassDeclIR.class);
-		classStatuses.addAll(IRStatus.extract(statuses, SClassDeclIR.class));
+		//classStatuses.addAll(IRStatus.extract(statuses, SClassDeclIR.class));
 		
-		List<IRStatus<SClassDeclIR>> canBeGenerated = new LinkedList<IRStatus<SClassDeclIR>>();
+		List<IRStatus<PIR>> canBeGenerated = new LinkedList<IRStatus<PIR>>();
 
-		for (IRStatus<SClassDeclIR> status : classStatuses)
+		for (IRStatus<PIR> status : IRStatus.extract(classStatuses))
 		{
 			if (status.canBeGenerated())
 			{
@@ -90,7 +94,7 @@ public class CppCodeGen extends CodeGenBase {
 
 		for (DepthFirstAnalysisAdaptor trans : transSeries.getSeries())
 		{
-			for (IRStatus<SClassDeclIR> status : canBeGenerated)
+			for (IRStatus<PIR> status : canBeGenerated)
 			{
 				try
 				{
@@ -109,11 +113,11 @@ public class CppCodeGen extends CodeGenBase {
 			}
 		}
 		
-		
+		generateClassHeaders(canBeGenerated);
 		
 		MergeVisitor mergeVisitor = cppFormat.getMergeVisitor();
 
-		for (IRStatus<SClassDeclIR> status : classStatuses)
+		for (IRStatus<PIR> status : canBeGenerated)
 		{
 			try {
 				
@@ -124,10 +128,29 @@ public class CppCodeGen extends CodeGenBase {
 			}
 		}
 		
+		
 		GeneratedData data = new GeneratedData();
 		data.setClasses(genModules);
 		
 		return data;
+	}
+
+	protected void generateClassHeaders(final List<IRStatus<PIR>> statuses)
+	{
+		try
+		{
+			Collection<? extends IRStatus<PIR>> classHeaders = new ClassHeaderGenerator().generateClassHeaders(IRStatus.extract(statuses, ADefaultClassDeclIR.class));
+
+			for (IRStatus<PIR> h : classHeaders) {
+				headers.add(h.getIrNodeName());
+			}
+
+			statuses.addAll(classHeaders);
+		} catch (org.overture.codegen.ir.analysis.AnalysisException e)
+		{
+			log.error("Could not generate class headers: " + e.getMessage());
+			e.printStackTrace();
+		}
 	}
 
 }

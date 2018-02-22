@@ -5,12 +5,14 @@ analysis org.overture.cgcpp.cppir.analysis;
 
 Tokens
 
-
 Abstract Syntax Tree
 
-IR = #decl;
+IR = #decl
+    ;
 
-#decl {-> package='org.overture.cgcpp.cppir.declarations'}
-       = {classHeader}
-       (originalDef):IR.#decl.#Class
-       ;
+#decl {-> package='org.overture.codegen.vdm2cpp.cppir.declarations'}
+        = 
+        {classHeader}
+        [name]:java_String
+        (originalDef):IR.#decl.#Class
+        ;
