@@ -1,0 +1,16 @@
+Packages
+
+base org.overture.cgcpp.cppir.node;
+analysis org.overture.cgcpp.cppir.analysis;
+
+Tokens
+
+
+Abstract Syntax Tree
+
+IR = #decl;
+
+#decl {-> package='org.overture.cgcpp.cppir.declarations'}
+       = {classHeader}
+       (originalDef):IR.#decl.#Class
+       ;

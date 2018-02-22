@@ -1,0 +1,25 @@
+#set( $static = "")
+#if ( $node.getStatic() )
+	#set( $static = "static")
+#end
+##
+#set( $returnType = "")
+##if (!$node.getIsConstructor())
+	##set( $returnType = $CppFormat.format($node.getMethodType().getResult()) )
+##end
+##
+#*#set( $templateTypes = "")
+#if ($node.getTemplateTypes().size() > 0)
+	#set( $templateTypes = $CppFormat.formatTemplateTypes($node.getTemplateTypes()))
+#end*#
+##
+#set ($params = $CppFormat.format($node.getFormalParams()))
+##
+##set( $throwsClause = $CppFormat.formatThrows($node.getRaises()))
+##
+##set( $body = $CppFormat.formatOperationBody($node.getBody()))
+##
+$CppFormat.formatVdmSource( $node )##
+##$CppFormat.formatMetaData($node.getMetaData())####
+$static $returnType $node.getName()($params)
+$body
