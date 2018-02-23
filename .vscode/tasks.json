@@ -18,7 +18,7 @@
         {
             "label": "build",
             "type": "shell",
-            "command": " & mvn compile -f \"c:/Users/mathi/Dropbox/overture/core/codegen/vdm2cpp/pom.xml\" -DskipTests",
+            "command": " & mvn compile -f \"${workspaceFolder}/core/codegen/vdm2cpp/pom.xml\" -DskipTests",
             "group": {
                 "kind": "build",
                 "isDefault": true

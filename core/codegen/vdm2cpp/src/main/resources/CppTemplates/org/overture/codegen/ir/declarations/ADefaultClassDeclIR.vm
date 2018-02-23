@@ -1,10 +1,7 @@
-class $node.getName()
-{
- private:
+\#include "$node.getName()"
 #*	#foreach( $field in $CppFormat.getPrivateFields($node.getFields()) )
 	$CppFormat.format($field)
 	#end *#
 	#foreach( $field in $node.getMethods() )
 	$CppFormat.format($field)
 	#end
-}

@@ -21,5 +21,7 @@
 ##
 $CppFormat.formatVdmSource( $node )##
 ##$CppFormat.formatMetaData($node.getMetaData())####
-$static $returnType $node.getName()($params)
+$static $returnType $node.parent().getName()::$node.getName()($params)
+{
 $body
+}
