@@ -1,1 +1,3 @@
-reached header
+\#include "vdm2cpplib.h"
+
+class 

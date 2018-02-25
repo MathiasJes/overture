@@ -1,0 +1,4 @@
+std::variant<
+#foreach( $type in $node.getTypes())
+    $CppFormat.format($type)
+#end

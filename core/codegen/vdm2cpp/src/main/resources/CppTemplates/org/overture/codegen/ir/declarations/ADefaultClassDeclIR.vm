@@ -5,3 +5,9 @@
 	#foreach( $field in $node.getMethods() )
 	$CppFormat.format($field)
 	#end
+
+#foreach( $method in $node.getOriginalDef().getMethods() )
+#if($CFormat.isPublic($method) && !$method.getIsConstructor()) 
+	$CFormat.format($method.getMethodType().getResult()) $method.getName()($CFormat.format($method.getFormalParams()).replace("this","this_"));
+#end
+#end

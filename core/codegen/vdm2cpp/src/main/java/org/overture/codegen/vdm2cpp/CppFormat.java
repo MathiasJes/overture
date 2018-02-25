@@ -11,10 +11,12 @@ import org.overture.codegen.ir.IRInfo;
 import org.overture.codegen.ir.analysis.AnalysisException;
 import org.overture.codegen.ir.declarations.AFieldDeclIR;
 import org.overture.codegen.ir.declarations.AFormalParamLocalParamIR;
+import org.overture.codegen.ir.types.AUnionTypeIR;
 import org.overture.codegen.merging.MergeVisitor;
 import org.overture.codegen.merging.TemplateCallable;
 import org.overture.codegen.merging.TemplateManager;
 import org.overture.codegen.ir.PIR;
+import org.overture.codegen.ir.STypeIR;
 
 public class CppFormat {
 	

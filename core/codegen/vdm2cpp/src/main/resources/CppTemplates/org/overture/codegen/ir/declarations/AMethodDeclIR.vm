@@ -4,9 +4,9 @@
 #end
 ##
 #set( $returnType = "")
-##if (!$node.getIsConstructor())
-	##set( $returnType = $CppFormat.format($node.getMethodType().getResult()) )
-##end
+#if (!$node.getIsConstructor())
+	#set( $returnType = $CppFormat.format($node.getMethodType().getResult()) )
+#end
 ##
 #*#set( $templateTypes = "")
 #if ($node.getTemplateTypes().size() > 0)

@@ -21,7 +21,7 @@ public class CppGenMain {
 		Settings.dialect = Dialect.VDM_SL;
 		Settings.release = Release.VDM_10;
 		
-		String simpleModel = "module A definitions functions add: nat * nat +> nat add(m,n) == m+n; end A";
+		String simpleModel = "module A definitions functions add: nat * nat +> char | int add(m,n) == m+n; end A";
 		
 		try {
 			TypeCheckResult<List<AModuleModules>> res = TypeCheckerUtil.typeCheckSl(simpleModel);
