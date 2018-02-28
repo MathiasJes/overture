@@ -1,0 +1,7 @@
+#if ( $CppFormat.isNull($node.getExp()) )
+	return;
+#elseif ( $CppFormat.isVoidType($node.getExp().getType()) )
+  $CppFormat.format($node.getExp());
+#else
+  return $CppFormat.format($node.getExp());
+#end

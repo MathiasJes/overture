@@ -1,0 +1,1 @@
+$CppFormat.format($node.getCondition()) ? $CppFormat.format($node.getTrueValue()) : $CppFormat.format($node.getFalseValue())

@@ -15,13 +15,13 @@
 ##
 #set ($params = $CppFormat.format($node.getFormalParams()))
 ##
-##set( $throwsClause = $CppFormat.formatThrows($node.getRaises()))
+#set( $throwsClause = $CppFormat.formatThrows($node.getRaises()))
 ##
-##set( $body = $CppFormat.formatOperationBody($node.getBody()))
+#set( $body = $CppFormat.format($node.getBody()))
 ##
 $CppFormat.formatVdmSource( $node )##
 ##$CppFormat.formatMetaData($node.getMetaData())####
 $static $returnType $node.parent().getName()::$node.getName()($params)
 {
-$body
+$body##
 }

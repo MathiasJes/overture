@@ -1,0 +1,1 @@
+$CppFormat.format($node.getLeft()) + $CppFormat.format($node.getRight())

@@ -1,0 +1,8 @@
+#set( $exp = $CppFormat.format($node.getExp()) )
+#set( $checkedType = $node.getCheckedType() )
+#set( $typeArg = $CppFormat.formatTypeArg(${checkedType}) )
+##
+##Utils.is_(${exp}, ${typeArg})
+#if( $CppFormat.isUnionType($node.getExp().getType()) )
+    ${exp}.is<${typeArg}>()##
+#end

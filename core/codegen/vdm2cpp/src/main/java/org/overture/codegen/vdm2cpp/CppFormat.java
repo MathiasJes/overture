@@ -1,6 +1,7 @@
 package org.overture.codegen.vdm2cpp;
 
 import java.io.StringWriter;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.overture.ast.intf.lex.ILexLocation;
@@ -11,7 +12,9 @@ import org.overture.codegen.ir.IRInfo;
 import org.overture.codegen.ir.analysis.AnalysisException;
 import org.overture.codegen.ir.declarations.AFieldDeclIR;
 import org.overture.codegen.ir.declarations.AFormalParamLocalParamIR;
+import org.overture.codegen.ir.statements.ABlockStmIR;
 import org.overture.codegen.ir.types.AUnionTypeIR;
+import org.overture.codegen.ir.types.AVoidTypeIR;
 import org.overture.codegen.merging.MergeVisitor;
 import org.overture.codegen.merging.TemplateCallable;
 import org.overture.codegen.merging.TemplateManager;
@@ -38,6 +41,45 @@ public class CppFormat {
 		StringWriter writer = new StringWriter();
 		node.apply(mergeVisitor, writer);
 		return writer.toString();
+	}
+
+	public String formattedTypes(List<STypeIR> types, String typePostFix)
+	throws AnalysisException
+	{
+	STypeIR firstType = types.get(0);
+
+	StringWriter writer = new StringWriter();
+	writer.append(format(firstType) + typePostFix);
+
+	for (int i = 1; i < types.size(); i++)
+	{
+		STypeIR currentType = types.get(i);
+
+		writer.append(", " + format(currentType) + typePostFix);
+	}
+
+	String result = writer.toString();
+
+	return result;
+	}
+
+	public String formatTypeArg(STypeIR type) throws AnalysisException
+	{
+		if (type == null)
+		{
+			return null;
+		} else
+		{
+			List<STypeIR> types = new LinkedList<STypeIR>();
+			types.add(type);
+
+			return formattedTypes(types, "");
+		}
+	}
+
+	public static boolean isScoped(ABlockStmIR block)
+	{
+		return block != null && block.getScoped() != null && block.getScoped();
 	}
 
 	public String format(List<AFormalParamLocalParamIR> params)
@@ -92,9 +134,19 @@ public class CppFormat {
 	public MergeVisitor getMergeVisitor() {
 		return mergeVisitor;
 	}
-	
-	public static String genSomething()
+
+	public boolean isNull(INode node)
 	{
-		return "Got this from template callable";
+		return node == null;
+	}
+
+	public boolean isUnionType(INode node)
+	{
+		return node instanceof AUnionTypeIR;
+	}
+
+	public boolean isVoidType(STypeIR node)
+	{
+		return node instanceof AVoidTypeIR;
 	}
 }

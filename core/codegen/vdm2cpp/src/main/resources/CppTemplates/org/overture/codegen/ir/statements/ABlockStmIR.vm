@@ -1,0 +1,21 @@
+#if ($CppFormat.isScoped($node))
+{
+#end
+##
+## Local definitions:
+##
+	#foreach( $dec in $node.getLocalDefs() )
+	$CppFormat.formatVdmSource($dec)##
+	$CppFormat.format($dec)
+	#end
+##
+## Statements:
+##
+	#foreach( $stm in $node.getStatements() )
+	$CppFormat.formatVdmSource($stm)##
+	$CppFormat.format($stm)
+	#end
+##
+#if ($CppFormat.isScoped($node))
+}
+#end
