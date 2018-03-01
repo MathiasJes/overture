@@ -355,7 +355,18 @@
             "stopOnEntry": false,
             "mainClass": "org.overture.codegen.vdm2cpp.CppGenMain",
             "projectName": "vdm2cpp",
-            "args": "C:\\Users\\mathi\\Desktop\\overture\\core\\codegen\\vdm2jml\\src\\test\\resources\\dynamic_analysis\\basictype\\IntAssignNonInt\\IntAssignNonInt.vdmsl"
+            "args": "C:\\Users\\mathi\\Desktop\\Overture\\core\\codegen\\vdm2jml\\target\\test-classes\\lib\\IO.vdmsl C:\\Users\\mathi\\Desktop\\overture\\core\\codegen\\vdm2jml\\src\\test\\resources\\dynamic_analysis\\basictype\\IntAssignNonInt\\IntAssignNonInt.vdmsl"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CppGenMain simple",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.overture.codegen.vdm2cpp.CppGenMain",
+            "projectName": "vdm2cpp",
+            "args": ""
         },
         {
             "type": "java",

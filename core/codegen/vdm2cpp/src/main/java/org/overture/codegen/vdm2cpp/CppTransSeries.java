@@ -60,13 +60,15 @@ public class CppTransSeries
 	{
 		// Data and functionality to support the transformations
 		TransAssistantIR transAssist = codeGen.getTransAssistant();
-
-		// Construct the transformations
-		FuncTrans funcTr = new FuncTrans(transAssist);
-
-		// Set up order of transformations
 		
+		// Construct the transformations
+		AssignStmTrans assignTr = new AssignStmTrans(transAssist);
+		FuncTrans funcTr = new FuncTrans(transAssist);
+		
+		// Set up order of transformations
+		series.add(assignTr);
 		series.add(funcTr);
+		
 
 		return series;
 	}

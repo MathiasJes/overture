@@ -1,0 +1,15 @@
+#set( $final = "")
+#if ( $node.getFinal() )
+	#set( $final = "const")
+#end
+##
+#set( $end = ";")
+#if ( $CppFormat.isLoopVar($node) )
+	#set( $end = "")
+#end
+##
+#set( $pattern = $CppFormat.format($node.getPattern()) )
+##
+##$CppFormat.formatMetaData($node.getMetaData())##
+##
+${final} $CppFormat.format($node.getType()) $pattern = $CppFormat.format($node.getExp())${end}

@@ -9,7 +9,9 @@ import java.util.List;
 import org.overture.ast.lex.Dialect;
 import org.overture.ast.modules.AModuleModules;
 import org.overture.codegen.ir.CodeGenBase;
+import org.overture.codegen.ir.INode;
 import org.overture.codegen.ir.IRSettings;
+import org.overture.codegen.ir.analysis.AnalysisException;
 import org.overture.codegen.printer.MsgPrinter;
 import org.overture.codegen.utils.GeneralCodeGenUtils;
 import org.overture.codegen.utils.GeneralUtils;
@@ -37,7 +39,7 @@ public class CppGenMain {
 		CppSettings cppSettings = new CppSettings();
 
 		//String simpleModel = "module A definitions functions add: int * int +> char | int add(m,n) == m+n; ex: char | int +> int ex(u) == if is_(u, int) then u else 1; end A";
-		String simpleModel = "module A definitions functions add: int * int +> char | int add(m,n) == m+n; ex: char | int +> int ex(u) == if is_(u, int) then u else 1; end A";
+		String simpleModel = "module A definitions operations add: () ==> ? add() == ( dcl i : int := -1; i := 1; i := i + 0.5; return 0; ); end A";
 		
 		List<File> files = new LinkedList<File>();
 		File outputDir = null;
@@ -188,7 +190,6 @@ public class CppGenMain {
 			e.printStackTrace();
 		}
 	}
-
 
 	public static List<File> filterFiles(List<File> files)
 	{

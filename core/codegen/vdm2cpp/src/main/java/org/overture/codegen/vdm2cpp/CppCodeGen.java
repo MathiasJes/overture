@@ -6,7 +6,9 @@ import java.util.Collection;
 import java.util.HashSet;
 
 import org.overture.ast.analysis.AnalysisException;
-import org.overture.codegen.ir.CodeGenBase;
+import org.overture.codegen.ir.*;
+import org.overture.codegen.ir.INode;
+import org.overture.codegen.ir.IREventCoordinator;
 import org.overture.codegen.ir.IRStatus;
 import org.overture.codegen.ir.PIR;
 import org.overture.codegen.ir.declarations.AModuleDeclIR;
@@ -18,7 +20,7 @@ import org.overture.codegen.ir.analysis.DepthFirstAnalysisAdaptor;
 import org.overture.codegen.utils.GeneratedData;
 import org.overture.codegen.utils.GeneratedModule;
 
-public class CppCodeGen extends CodeGenBase {
+public class CppCodeGen extends CodeGenBase implements IREventCoordinator {
 
 	public static final String CPP_TEMPLATES_ROOT_FOLDER = "CppTemplates";
 	private CppFormat cppFormat;
@@ -150,6 +152,25 @@ public class CppCodeGen extends CodeGenBase {
 		{
 			log.error("Could not generate class headers: " + e.getMessage());
 			e.printStackTrace();
+		}
+	}
+
+	@Override
+	protected void preProcessAst(List<org.overture.ast.node.INode> ast) throws AnalysisException
+	{
+		generator.computeDefTable(getUserModules(ast));
+		removeUnreachableStms(ast);
+		handleOldNames(ast);
+
+		for (INode node : ast)
+		{
+			if (getInfo().getAssistantManager().getDeclAssistant().isLibrary(node))
+			{
+				simplifyLibrary(node);
+			} else
+			{
+				preProcessVdmUserClass(node);
+			}
 		}
 	}
 

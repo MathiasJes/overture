@@ -1,1 +1,1 @@
-AAssignToExpStmIR
+$CppFormat.format($node.getTarget()) = $CppFormat.format($node.getExp());

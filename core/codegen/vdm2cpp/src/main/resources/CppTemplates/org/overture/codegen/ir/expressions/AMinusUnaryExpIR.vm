@@ -1,1 +1,1 @@
-AMinusUnaryExpIR
+-$CppFormat.format($node.getExp())
