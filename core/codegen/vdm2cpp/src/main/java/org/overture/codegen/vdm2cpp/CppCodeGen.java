@@ -158,20 +158,7 @@ public class CppCodeGen extends CodeGenBase implements IREventCoordinator {
 	@Override
 	protected void preProcessAst(List<org.overture.ast.node.INode> ast) throws AnalysisException
 	{
-		generator.computeDefTable(getUserModules(ast));
-		removeUnreachableStms(ast);
-		handleOldNames(ast);
-
-		for (INode node : ast)
-		{
-			if (getInfo().getAssistantManager().getDeclAssistant().isLibrary(node))
-			{
-				simplifyLibrary(node);
-			} else
-			{
-				preProcessVdmUserClass(node);
-			}
-		}
+		super.preProcessAst(ast);
 	}
 
 }
